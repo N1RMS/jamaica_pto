@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-03-26 17:39:58.372748",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "minimum_working_hours",
+  "mandatory_working_days",
+  "employee_receive_1_day_on_the_basis_of_how_many_working_days"
+ ],
+ "fields": [
+  {
+   "description": "\"Attendance mark as Present on the basis of minimum hrs\"",
+   "fieldname": "minimum_working_hours",
+   "fieldtype": "Float",
+   "label": "Minimum Working Hours",
+   "precision": "3"
+  },
+  {
+   "fieldname": "employee_receive_1_day_on_the_basis_of_how_many_working_days",
+   "fieldtype": "Int",
+   "label": "Employee receive 1 day on the basis of how many working days"
+  },
+  {
+   "description": "\"After completing the specified number of days, employees become eligible to receive vacation leave.\"",
+   "fieldname": "mandatory_working_days",
+   "fieldtype": "Int",
+   "label": "Mandatory Working Days"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-03-26 18:09:14.606195",
+ "modified_by": "Administrator",
+ "module": "Jamaica Pto",
+ "name": "Paid Time Off Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

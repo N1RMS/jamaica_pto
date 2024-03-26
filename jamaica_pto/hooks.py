@@ -227,3 +227,26 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+doc_events = {
+    "Branch":{
+        "validate":"jamaica_pto.override.vacation.new_leave_allocation_of_2weeks"
+    },
+    "Timesheet":{
+        "validate":"jamaica_pto.override.mark_attendance_by_timesheet.mark_attendance_on_2hrs_complete"
+    },
+    "Timesheet":{
+        "after_submit":"jamaica_pto.override.mark_attendance_by_timesheet.submit_attendance_on_timesheet_submission"
+    }
+}
+
+fixtures = [ {
+        "dt": "Custom Field",
+        "filters": [
+            [
+                "dt", "in", ["Paid Time Off Settings"]
+            ]
+        ]
+    }]
+
+
