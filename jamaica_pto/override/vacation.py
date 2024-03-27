@@ -52,6 +52,7 @@ def new_leave_allocation_of_2weeks(doc, method=None):
         
         if pemployee['total_present_days'] == 220:
             frappe.db.set_value('Leave Allocation', {'employee': pemployee['employee']}, {'new_leaves_allocated': 14, 'total_leaves_allocated': 14})
+            frappe.db.set_value('Employee', pemployee['employee'], {'custom_last_leave_allocate_date': current_date})
         
         allocated_date = frappe.db.get_value('Employee', pemployee['employee'], 'custom_last_leave_allocate_date')
         sql_query = '''
@@ -65,6 +66,8 @@ def new_leave_allocation_of_2weeks(doc, method=None):
             if currently_allocated_leaves < 14:
                 currently_allocated_leaves += 1
                 frappe.db.set_value('Leave Allocation', {'employee': pemployee['employee']}, {'new_leaves_allocated': currently_allocated_leaves, 'total_leaves_allocated': currently_allocated_leaves})
+                frappe.db.set_value('Employee', pemployee['employee'], {'custom_last_leave_allocate_date': current_date})
+
                 frappe.msgprint("Leave updated successfully")
 
         
